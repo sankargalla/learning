@@ -1,0 +1,19 @@
+
+h1 {
+    color: #270707;
+    text-align: center;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: white;
+    color: #3498db;
+    font-weight: 900;
+}
+.container{
+    height: 20vh; 
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+}
+
