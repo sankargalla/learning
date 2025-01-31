@@ -34,12 +34,11 @@ function handleCardClick(event) {
     selectedCards.push(card);
     card.style.pointerEvents = "none";
     if (selectedCards.length === 2) {
-        setTimeout(checkMatch, 500);
-    }
+        setTimeout(checkMatch, 250);
+    }  
 }
 function checkMatch() {
     const [card1, card2] = selectedCards;
-    console.log(card1,card2)
     if (card1.dataset.color === card2.dataset.color) {
         card1.classList.add('matched');
         card2.classList.add('matched');
@@ -66,7 +65,12 @@ function startGame() {
     gameContainer.innerHTML = '';
     generateCards();
     gameContainer.addEventListener('click', handleCardClick);
+    
 }
+function disableClick() {
+    gameContainer.removeEventListener('click', handleCardClick);
+}
+
 function startGameTimer(timeLeft) {
     timerElement.textContent = `Time Left: ${timeLeft}`;
     gameInterval = setInterval(() => {
@@ -75,9 +79,9 @@ function startGameTimer(timeLeft) {
 
         if (timeLeft === 0) {
             clearInterval(gameInterval);
-            let timeLeft = 30;
             alert('Game Over!');
             startbtn.disabled = false;
+            disableClick();
         }
     }, 1000);
 }
