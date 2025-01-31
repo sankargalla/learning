@@ -8,4 +8,5 @@ function openNewsArticles(){
     window.location.href = "news_article.html";
 }
 
-// healthArticleBtn.addEventListener("click",openHealthArticles())
+healthArticleBtn.addEventListener("click",openHealthArticles)
+newsArticleBtn.addEventListener("click",openNewsArticles);
