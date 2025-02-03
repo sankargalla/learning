@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Travel Recomendations</title>
+<link rel="stylesheet" href="travel_recomendations.css">
+</head>
+<body onload="loadContent('home')">
+
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="logo.jpg" class="navbar-logo" alt="Logo">
+            <span class="navbar-name">BeyondBoundaries</span>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="#" onclick="loadContent('home')">Home</a></li>
+            <li><a href="#" onclick="loadContent('about')">About US</a></li>
+            <li><a href="#" onclick="loadContent('contact')">Contact</a></li>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Enter keywords...">
+                <button id="search" onclick="searchRecommendations()">Search</button>
+                <button onclick="clearResults()">Clear</button>
+            </div>
+        </ul>
+    </nav>
+    <resultContainer id="resultContainer"></resultContainer>
+    <div id = "content" class="content"></div>
+    <div id="searchInfo"></div>
+    <div id="contactUs"></div>
+<script src="./travel_recommendation.js"></script>
+
+</body>
+</html>
